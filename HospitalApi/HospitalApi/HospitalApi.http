@@ -20,3 +20,39 @@ Content-Type: application/json
   "from": "2026-05-20T10:00:00",
   "to": "2026-05-25T10:00:00"
 }
+
+### get all patients
+GET {{HospitalApi_HostAddress}}/api/patients
+
+### search patients
+GET {{HospitalApi_HostAddress}}/api/patients?search=an
+
+### create bed assignment - correct
+POST {{HospitalApi_HostAddress}}/api/patients/68111122233/bedassignments
+Content-Type: application/json
+
+{
+  "bedId": 3,
+  "from": "2026-05-20T10:00:00",
+  "to": "2026-05-25T10:00:00"
+}
+
+### create bed assignment - wrong dates
+POST {{HospitalApi_HostAddress}}/api/patients/85050567890/bedassignments
+Content-Type: application/json
+
+{
+  "bedId": 1,
+  "from": "2026-05-25T10:00:00",
+  "to": "2026-05-20T10:00:00"
+}
+
+### Create bed assignment - missing patient
+POST {{HospitalApi_HostAddress}}/api/patients/00000000000/bedassignments
+Content-Type: application/json
+
+{
+  "bedId": 1,
+  "from": "2026-05-20T10:00:00",
+  "to": "2026-05-25T10:00:00"
+}
