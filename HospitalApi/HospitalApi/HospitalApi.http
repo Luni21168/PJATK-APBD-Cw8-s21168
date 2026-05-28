@@ -4,3 +4,9 @@ GET {{HospitalApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### Get all patients
+GET {{HospitalApi_HostAddress}}/api/patients
+
+### Search patients
+GET {{HospitalApi_HostAddress}}/api/patients?search=ann
