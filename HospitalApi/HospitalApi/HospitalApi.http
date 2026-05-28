@@ -10,3 +10,13 @@ GET {{HospitalApi_HostAddress}}/api/patients
 
 ### Search patients
 GET {{HospitalApi_HostAddress}}/api/patients?search=ann
+
+### create bed assignment
+POST {{HospitalApi_HostAddress}}/api/patients/90010112345/bedassignments
+Content-Type: application/json
+
+{
+  "bedId": 1,
+  "from": "2026-05-20T10:00:00",
+  "to": "2026-05-25T10:00:00"
+}
